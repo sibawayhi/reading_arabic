@@ -1,0 +1,3 @@
+
+default:
+	xelatex reading.tex

@@ -1,0 +1,556 @@
+\documentclass[11pt]{article}
+
+
+
+% \usepackage[xetex,svgnames,x11names]{xcolor}
+%%%%%%%%%%%%%%%%  START XETEX SETUP  %%%%%%%%%%%%%%%%
+\usepackage{fontspec}
+%%\usepackage{xunicode}
+\usepackage{xltxtra}
+% \defaultfontfeatures{Mapping=tex-text}
+
+%\setmainfont{Cochin}
+\setmainfont{Gentium Book Plus}
+
+% \newfontfamily\symfam{Apple Symbols}
+%%\newfontfamily\symfam2{Arial Unicode MS}
+%%\newfontfamily\symfam2{/System/Library/Fonts/ZapfDingbats.ttf}
+%%\newfontfamily\symfam2{Menlo}
+
+% \newfontfamily\arfont{Scheherazade:script=arab}
+% \newfontfamily\arsegfont[Scale=1.2]{Scheherazade:script=arab}
+% \newfontfamily\arversefont[Scale=1.5]{Scheherazade:script=arab}
+
+\newfontfamily\englishfontit{Gentium Book Plus Italic}
+\newfontfamily\arabicfont[Scale=2.0]{Scheherazade:script=arab}
+
+% \newfontfamily\artitle[Scale=10.0]{Scheherazade:script=arab}
+% \newfontfamily\arsubtitle[Scale=3.0]{Scheherazade:script=arab}
+% \newfontfamily\arhwfont[Scale=1]{KufiStandardGK:script=arab}
+% \newfontfamily\enhwfont[Scale=1.2]{Lucida Grande}
+
+% \newfontfamily\arexfont[Scale=1.2]{Scheherazade:script=arab}
+
+% \newcommand{\exar}[1]{\RLE{\arexfont #1}}
+
+% \newcommand{\ar}[1]{{\beginR\arfont #1\endR}}
+% \newcommand{\arnote}[1]{{\RL{\normalsize\arfont #1}}}
+% \newcommand{\arheadword}[1]{\beginR{\arhwfont #1}\endR}
+% \newcommand{\arx}[2]{\xlit{\itshape #1} ({\beginR\arfont #2\endR})}
+
+% \newcommand{\en}[1]{{\beginL\sffamily #1\endL}}
+% \newcommand{\enheadword}[1]{\beginL{\enhwfont #1}\endL}
+% \newcommand{\enx}[1]{{\xlit{\itshape #1}}}
+
+% \newfontfamily\entext[Scale=.8]{Geneva}
+
+% \newfontfamily\xlit{Charis SIL}
+
+% \newfontfamily\arxen{Charis SIL}
+
+% % \newfontfamily\roman{Gentium Book Plus}
+% \newfontfamily\italic{Gentium Book Plus Italic}
+% \newfontfamily\ipafamily{Doulos SIL}
+% \newfontfamily\ital{Andale Mono}
+% \newfontfamily\symbol[Scale=.8]{Apple Symbols}
+\let\XeTeX\undefined
+\let\XeLaTeX\undefined
+%%%%%%%%%%%%%%%%  END XETEX SETUP  %%%%%%%%%%%%%%%%
+\usepackage[pdfusetitle]{hyperref} % Creates hyperlinks and index in the PDF document, preferably load after biblatex
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={My title},    % title
+    pdfauthor={Author},     % author
+    pdfsubject={Subject},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=blue,         % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+
+%% \usepackage[extrafootnotefeatures]{bidi}  %% for xetex, load last
+
+\newcommand{\sib}{Sībawayhi}
+\newcommand{\ism}{\textit{ism}}
+\newcommand{\harf}{\textit{ḥarf}}
+\newcommand{\huruf}{\textit{ḥurūf}}
+\newcommand{\fil}{\textit{fiʿl}}
+\newcommand{\maana}{\textit{maʕnā}}
+\newcommand{\damma}{\textit{ḍamma}}
+\newcommand{\fatha}{\textit{fatḥa}}
+\newcommand{\kasra}{\textit{kasra}}
+\newcommand{\sukun}{\textit{sukūn}}
+\newcommand{\rafu}{\textit{rafʿ}}
+\newcommand{\nasb}{\textit{naṣb}}
+\newcommand{\jarr}{\textit{jarr}}
+\newcommand{\waqf}{\textit{waqf}}
+\newcommand{\tanwin}{\textit{tanwīn}}
+\newcommand{\hasan}{\textit{ḥasan}}
+\newcommand{\qabih}{\textit{qabīḥ}}
+\newcommand{\kitab}{\textit{Kitāb}}
+\newcommand{\xabar}{\textit{xabar}}
+\newcommand{\maful}{\textit{mafʿūl}}
+\newcommand{\zarf}{\textit{ẓarf}}
+\newcommand{\qawl}{\textit{qawl}}
+\newcommand{\aqwal}{\textit{aqwāl}}
+\newcommand{\sama}{\textit{samāʕ}}
+\newcommand{\qiyas}{\textit{qiyās}}
+\newcommand{\illa}{\textit{ʕilla}}
+\newcommand{\taqdir}{\textit{taqdīr}}
+\newcommand{\amal}{\textit{ʕamal}}
+\newcommand{\hadathan}{\textit{ḥadaθān}}
+\newcommand{\hal}{\textit{ḥāl}}
+\newcommand{\asl}{\textit{aṣl}}
+\newcommand{\almutakallim}{\textit{al-mutakallim}}
+\newcommand{\almuxatab}{\textit{al-muxātab}}
+\newcommand{\kalam}{\textit{kalām}}
+\newcommand{\nahwiyyun}{\textit{naḥwiyyūn}}
+%\newcommand{}{\textit{}}
+
+
+%% ʿ
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{Reading Arabic}
+\author{G. A. Reynolds}
+\date{Today}
+\maketitle
+
+\begin{abstract}
+A Tutorial and Guide to Arabic Orthography
+\end{abstract}
+
+\tableofcontents
+
+\section{Overview: \textit{ḥarf}, \textit{ḥarakah}, and \textit{taʃkīl}}
+
+Arabic \textit{ḥurûf} have two or four forms, but fortunately each has
+a kernel that is more or less the same in each form.
+
+\begin{itemize}
+\item freestanding, initial, medial, and final; e.g. \textarabic{ت ، تـ
+  ، ـتـ ، ـت}
+\item freestanding and final. These have roughly similar shapes. The
+  final forms are identical to the freestanding forms, except they are
+  tied to the previous form by a ligature:
+  \textarabic{ا ـا ، د ـد ، ذ ـذ ، ر ـر ، ز ـز ، و ـو}
+\end{itemize}
+
+Note that these forms are determined by the preceding and following
+letters rather than position in a word. For example, a word may be
+composed entirely of free-standing forms, as in \textarabic{دَوَّرَ}
+``dawwara'' or \textarabic{وَرْد} ``ward''; entirely of connected forms,
+as in \textarabic{كتب ، منطلق}, or a combination of both, as in
+\textarabic{موضع ، كتاب ، دخل ن ضاربون}
+
+Groups:
+
+\begin{itemize}
+\item toothed forms: \textarabic{ب ، ت ، ث ، ي}
+\item three forms without or with a dot, above or below: \textarabic{ج~،~ح~،~خ}
+\item paired forms, without and with a diacritic:
+  \textarabic{(د ، ذ) (ر ، ز) (س~،~ش) (ص ، ض) (ط ، ظ) (ع ، غ) (ف ، ق)}
+\item remaining forms: \textarabic{ا ، ك ، ل ، م ، و}
+\end{itemize}
+
+\section{Ḥurûf (\textarabic{الْحُرُوْف})}
+
+Forms are listed in right-to-left order: freestanding, initial,
+medial, final.
+
+Transliterations are for this document only; they deviate somewhat
+from standard transliteration schemes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ا}  \textit{ā} as in b\textit{ā}t}
+This is the most complex ḥarf. See below.
+
+\noindent Name: alif
+
+\noindent Forms: \textarabic{ا ، ـا}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ب}  \textit{b} as in \textit{b}ottom}
+Mnemonic: \textit{b}ottom dot
+
+\noindent Name: baa'
+
+\noindent Forms: \textarabic{ب ، بـ ، ـبـ ، ـب}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ت} \textit{t} as in \textit{t}wo}
+Mnemonic: \textit{t}wo dots on a tooth.
+
+\noindent Name: taa'
+
+\noindent forms: \textarabic{ت ، تـ ، ـتـ ، ـت}
+
+\subsection{ \textarabic{ث} \textit{th} as in \textit{th}ree}
+Mnemonic:  \textit{th}ree dots on a tooth.
+
+\noindent Name: taa'
+
+\noindent Transliteration: θ (Greek small letter theta)
+
+\noindent Forms: \textarabic{ث ، ثـ ، ـثـ ، ـث}
+
+\subsection{ \textarabic{ج} \textit{j} as in \textit{j}oker}
+Mnemonic:  ?
+
+\noindent Name: jīm (jeem)
+
+\noindent Forms: \textarabic{ج ، جـ ، ـجـ ، ـج}
+
+\subsection{ \textarabic{ح} \textit{ḥ} as in \textit{ḥ}arsh}
+Pronunciation: like the ``soft'' h \textarabic{ه}, but much harsher.
+See section X below.
+
+\noindent Name: ḥaa
+
+\noindent Transliteration: ḥ (h with dot below)
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{ح ، حـ ، ـحـ ، ـح}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{خ} \textit{kh} as in lo\textit{kh} ness}
+Pronunciation: like ``\textit{ch}'' in Scottish ``lo\textit{ch}'' or
+German ``a\textit{ch}'' but stronger; see below.
+
+\noindent Name: xaa'
+
+\noindent Transliteration: x - ``kh'' is unsuitable, since both
+\textit{k} and \textit{h} are used, for \textarabic{ك} and
+textarabic{ه} respectively.
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{خ ، خـ ، ـخـ ، ـخ}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{د} \textit{d} as in \textit{d}og}
+Mnemonic:  ?
+
+This is our first letter with only two forms, freestanding and final.
+
+\noindent Name: dal
+
+\noindent Forms: \textarabic{د ، ـد}
+
+\subsection{ \textarabic{ذ} \textit{th} as in mo\textit{th}er, fa\textit{th}er}
+Mnemonic:  a dog with a dot is ...?
+
+\noindent Forms: \textarabic{ذ ، ـذ}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ر} \textit{r} as in \textit{r}ada\textit{r}}
+Mnemonic:  ?
+
+\noindent Name: raa'
+
+\noindent Forms: \textarabic{ر ، ـر}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ز} \textit{z} as in \textit{z}ebra}
+Mnemonic:  ?
+
+\noindent Name: zayn
+
+\noindent Forms: \textarabic{ز ، ـز}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{س} ``thin'' \textit{s} as in \textit{s}ee}
+Mnemonic:  ?
+
+\noindent Name: sīn (seen)
+
+\noindent Forms: \textarabic{س ، سـ ، ـسـ ، ـس}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ش} \textit{sh} as in \textit{sh}ow}
+Mnemonic:  three dots on three teeth is \textit{sh}owing off
+
+\noindent Name: shīn (sheen)
+
+\noindent Transliteration: ʃ (latin small letter esh)
+
+\noindent Forms: \textarabic{ش ، شـ ، ـشـ ، ـش}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ص} ``thick'' \textit{ṣ}}
+Pronunciation: see below.
+
+\noindent Name: ṣaud
+
+\noindent Transliteration: ṣ
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{ص ، صـ ، ـصـ ، ـص}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ض} ``thick'' \textit{ḍ}}
+Pronunciation: similar to \textarabic{د}; see below.
+
+\noindent Name: ḍaud
+
+\noindent Transliteration: ḍ (d with dot below)
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{ض ، ضـ ، ـضـ ، ـض}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ط} ``thick'' \textit{ṭ}}
+Pronunciation: similar to \textarabic{د}; see below.
+
+\noindent Name: ṭaa
+
+\noindent Transliteration: ṭ (t with dot below)
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{ط ، طـ ، ـطـ ، ـط}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ظ} ``thick'' \textit{ẓ}}
+Pronunciation: similar to \textarabic{ذ}, \textarabic{ز}; see below.
+
+\noindent Name: ẓaa
+
+\noindent Transliteration: ẓ (z with dot below)
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{ظ ، ظـ ، ـظـ ، ـظ}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ع} (unpronouncable ;)}
+Pronunciation: see below
+
+\noindent Name: 'ayn
+
+\noindent Transliteration: 9 (rhymes with ayn, vaguely similar shape)
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{ع ، عـ ، ـعـ ، ـع}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{غ} \textit{g} as in \textit{g}ar\textit{g}le}
+Pronunciation: a guttural, rolling, hard /g/ sound
+
+\noindent Name: ghayn
+
+\noindent Transliteration: g
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{غ ، غـ ، ـغـ ، ـغ}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ف} \textit{f} as in \textit{f}face}
+
+\noindent Name: faa'
+
+\noindent Transliteration: f
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{ف ، فـ ، ـفـ ، ـف}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ق} \textit{q} as in \textit{q}ueue}
+Pronunciation: like /k/ but farther back in the throat; see below
+
+\noindent Name: qaf
+
+\noindent Transliteration: q
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{ق ، قـ ، ـقـ ، ـق}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ك} \textit{k} as in \textit{k}ick}
+
+\noindent Name: kaf
+
+\noindent Transliteration: k
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{ك ، كـ ، ـكـ ، ـك}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ل} \textit{l} as in \textit{l}amb}
+
+\noindent Name: lam
+
+\noindent Transliteration: l
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{ل ، لـ ، ـلـ ، ـل}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{م} \textit{m} as in \textit{m}i\textit{m}e}
+
+\noindent Name: mīm (meem)
+
+\noindent Transliteration: m
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{م ، مـ ، ـمـ ، ـم}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ن}  \textit{n} as in \textit{n}oo\textit{n}, o\textit{n}e}
+
+\noindent Name: nûn (noon)
+
+Mnemonic:  o\textit{n}e dot on a tooth.
+
+NB: this is a “tooth” letter, like \textarabic{ب ، ت ، ي}, but the
+freestanding and final forms are a little deeper.
+
+\noindent Forms: \textarabic{ن ، نـ ، ـنـ ، ـن}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{ه} soft \textit{h} as in  \textit{h}um, \textit{h}am, \textit{h}im }
+
+\noindent Name: haa'
+
+\noindent Transliteration: h
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{ه ، هـ ، ـهـ ، ـه}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ \textarabic{و} \textit{w} as in  \textit{w}ater,
+  \textit{oo} as in b\textit{oo}t}
+
+\noindent Name: waw
+
+\noindent Transliteration: w
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{و ، ـو}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\textarabic{ي}  \textit{y} as in \textit{y}et;
+  \textit{ee} as in f\textit{ee}t; \textit{y} as in fish\textit{y}}
+Mnemonic:  ?
+
+\noindent Name: yaa'
+
+\noindent Transliteration: y
+
+\noindent Mnemonic:  ?
+
+\noindent Forms: \textarabic{ي ، يـ ، ـيـ ، ـي}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Pronunciation Tips}
+
+The following are tricky for English speakers: \textarabic{ص ، ض ، ط ،
+  ظ ، ع ، غ ، ق}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Special cases}
+
+\subsection{\textarabic{ى , آ , ٱ , ا} - varieties of \textit{alif}}
+
+\subsubsection{\textarabic{ٱ} alif al-wasl}
+\subsubsection{\textarabic{آ} alif al-madd}
+\subsubsection{\textarabic{ـٰ}\  dagger alif}
+\subsubsection{\textarabic{ى} alif maqsurah}
+
+The strangest beast in the menagerie. The alif maqsura may be written
+as either \textarabic{ى}, as in \textarabic{فتى}, or \textarabic{ا} as
+in \textarabic{غَزَا}. Which demonstrates that \textit{alif} is a
+concept, rather than a mere letter.
+
+See also \textarabic{الممدود} e.g. \textarabic{بِنَاْء}.
+
+WARNING: in printed text, final \textarabic{ي} is often written
+without dots, so it looks like a proper alif maqsurah.
+
+
+
+\subsection{\textarabic{ء} - hamza}
+
+\subsection{\textarabic{ة} - taa' marbuta}
+
+This is the most clever of Arabic characters. It always comes last in
+a word (though it may then be suffixed) and may function as either a
+(final) soft h (\textarabic{ه}) or as a /t/ (\textarabic{ت}). Its
+shape reflects this dual functionality. The name marbuta means
+``tied'', and the idea is that the two teeth of a free-standing
+\textarabic{ت} have been bound together, resulting in the shape of
+\textarabic{ه} with the two dots pushed above it. But this name was a
+later invention; Sibawayhi always called this either the ha or that ta
+of feminization, since it always marks the word as feminine.
+
+When it is suffixed, it resumes the shape of \textarabic{ت}; in other
+words, its free-standing and final forms are the same as
+\textarabic{ه}, i.e. \textarabic{ة ، ـة}; but its initial and medial
+forms are the same as for \textarabic{ت}.
+
+Only pronounced /h/ when utterance-final, i.e. pausal form. Otherwise
+pronounced /t/. Three cases: the word is nunated, suffixed by a
+postclitic, or suffixed by a following majrur.
+
+Examples:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\textit{Taʃkīl}}
+
+\subsection{shadda}
+
+\subsection{idgham}
+
+\subsection{Quranic orthography}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Order}
+
+\subsection{Alif-baa'}
+
+\subsection{Abjadiyyah}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+
+\section{License}
+
+Reading Arabic © 2024 by Gregg Reynolds is licensed under Creative
+Commons Attribution-NonCommercial-NoDerivatives 4.0 International. To
+view a copy of this license, visit
+\href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{https://creativecommons.org/licenses/by-nc-nd/4.0/}
+
+\end{document}
+
